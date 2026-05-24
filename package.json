@@ -1,0 +1,88 @@
+{
+  "name": "implicit-markdown-links",
+  "displayName": "Implicit Markdown Links",
+  "description": "Make plain text that matches Markdown note titles clickable inside VS Code.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "workspaceContains:**/*.md"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Implicit Markdown Links",
+      "properties": {
+        "implicitMarkdownLinks.titleSources": {
+          "type": "array",
+          "default": [
+            "h1",
+            "frontmatter",
+            "filename"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "h1",
+              "frontmatter",
+              "filename"
+            ]
+          },
+          "description": "Sources used to derive Markdown note titles, in priority order."
+        },
+        "implicitMarkdownLinks.minTitleLength": {
+          "type": "number",
+          "default": 4,
+          "minimum": 1,
+          "description": "Minimum title length before plain text can become an implicit link."
+        },
+        "implicitMarkdownLinks.caseSensitive": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether implicit title matching is case-sensitive."
+        },
+        "implicitMarkdownLinks.scope": {
+          "type": "string",
+          "default": "workspace",
+          "enum": [
+            "workspace",
+            "currentFolderAndChildren"
+          ],
+          "description": "Whether note titles are matched across the full workspace or only the current file's folder and descendants."
+        },
+        "implicitMarkdownLinks.exclude": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Glob patterns excluded from Markdown note indexing."
+        },
+        "implicitMarkdownLinks.decorationEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Underline implicit links in Markdown editors."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "implicitMarkdownLinks.rebuildIndex",
+        "title": "Implicit Markdown Links: Rebuild Index"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node test/titleIndex.test.js"
+  },
+  "devDependencies": {}
+}
