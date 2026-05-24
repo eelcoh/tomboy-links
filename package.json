@@ -91,6 +91,7 @@
     ]
   },
   "scripts": {
+    "install:sublime": "node editors/sublime/install.js",
     "test": "node test/titleIndex.test.js && node test/lspCore.test.js"
   },
   "devDependencies": {}

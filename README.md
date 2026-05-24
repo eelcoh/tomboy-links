@@ -55,3 +55,16 @@ export TOMBOY_LINKS_LSP_PATH=/path/to/tomboy-links/lsp/server.js
 ```
 
 Zed integration currently provides go-to-definition and document-link data through LSP. It does not provide the always-visible VS Code underline decoration.
+
+## Sublime Text
+
+Experimental Sublime Text support lives in `editors/sublime`. It uses the shared Tomboy Links language server in `lsp/server.js` through the Sublime `LSP` package.
+
+For local testing:
+
+1. Install the `LSP` package in Sublime Text.
+2. Run `npm run install:sublime` from this repository.
+3. Restart Sublime Text.
+4. Open a folder containing Markdown notes as a Sublime project or window.
+
+Sublime Text integration currently provides go-to-definition and document-link data through LSP. It does not provide the always-visible VS Code underline decoration.
