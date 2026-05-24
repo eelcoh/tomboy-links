@@ -4,6 +4,7 @@
   "description": "Make plain text that matches Markdown note titles clickable inside VS Code.",
   "version": "0.0.1",
   "publisher": "local",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/eelcoh/tomboy-links.git"
