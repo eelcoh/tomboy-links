@@ -1,6 +1,6 @@
 {
-  "name": "implicit-markdown-links",
-  "displayName": "Implicit Markdown Links",
+  "name": "tomboy-links",
+  "displayName": "Tomboy Links",
   "description": "Make plain text that matches Markdown note titles clickable inside VS Code.",
   "version": "0.0.1",
   "publisher": "local",

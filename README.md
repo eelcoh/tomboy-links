@@ -1,4 +1,4 @@
-# Implicit Markdown Links
+# Tomboy Links
 
 This VS Code extension makes plain text in Markdown files behave like Tomboy-style note links when it matches the title of another Markdown file in the workspace.
 
