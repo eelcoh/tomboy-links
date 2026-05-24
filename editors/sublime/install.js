@@ -8,7 +8,7 @@ const path = require('path');
 const repoRoot = path.resolve(__dirname, '..', '..');
 const serverPath = path.join(repoRoot, 'lsp', 'server.js');
 const serverName = 'tomboy-links';
-const settingsFile = 'LanguageServers.sublime-settings';
+const settingsFile = 'LSP.sublime-settings';
 
 main();
 
@@ -30,7 +30,10 @@ function main() {
 
   const settingsPath = path.join(userDir, settingsFile);
   const settings = readSettings(settingsPath);
-  settings[serverName] = buildServerConfig();
+  settings.clients = settings.clients && typeof settings.clients === 'object'
+    ? settings.clients
+    : {};
+  settings.clients[serverName] = buildServerConfig();
   fs.writeFileSync(settingsPath, `${JSON.stringify(settings, null, 2)}\n`);
 
   console.log(`Installed ${serverName} LSP config:`);
@@ -145,7 +148,7 @@ function stripJsonComments(input) {
 function buildServerConfig() {
   return {
     enabled: true,
-    command: ['node', serverPath],
+    command: [process.execPath, serverPath],
     selector: 'text.html.markdown | text.html.markdown.gfm',
   };
 }
