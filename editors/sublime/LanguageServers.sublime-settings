@@ -1,0 +1,10 @@
+{
+  "tomboy-links": {
+    "enabled": true,
+    "command": [
+      "node",
+      "/absolute/path/to/tomboy-links/lsp/server.js"
+    ],
+    "selector": "text.html.markdown | text.html.markdown.gfm"
+  }
+}
