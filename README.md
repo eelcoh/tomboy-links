@@ -36,3 +36,22 @@ npm test
 ```
 
 Open this folder in VS Code and press `F5` to launch an Extension Development Host.
+
+## Zed
+
+Experimental Zed support lives in `editors/zed`. It uses the shared Tomboy Links language server in `lsp/server.js`.
+
+For local testing:
+
+1. Open Zed.
+2. Run `zed: install dev extension`.
+3. Select the `editors/zed` directory.
+4. Open this repository root as your Zed project.
+
+When using the dev extension from another project, point it at the language server:
+
+```sh
+export TOMBOY_LINKS_LSP_PATH=/path/to/tomboy-links/lsp/server.js
+```
+
+Zed integration currently provides go-to-definition and document-link data through LSP. It does not provide the always-visible VS Code underline decoration.
