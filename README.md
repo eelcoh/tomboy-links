@@ -62,9 +62,11 @@ Experimental Sublime Text support lives in `editors/sublime`. It uses the shared
 
 For local testing:
 
-1. Install the `LSP` package in Sublime Text.
-2. Run `npm run install:sublime` from this repository.
+1. Install Package Control in Sublime Text if it is not already available.
+2. Use Package Control to install the `LSP` package.
 3. Restart Sublime Text.
-4. Open a folder containing Markdown notes as a Sublime project or window.
+4. Run `npm run install:sublime` from this repository.
+5. Restart Sublime Text again.
+6. Open a folder containing Markdown notes as a Sublime project or window.
 
 Sublime Text integration currently provides go-to-definition and document-link data through LSP. It does not provide the always-visible VS Code underline decoration.

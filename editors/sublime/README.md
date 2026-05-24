@@ -6,12 +6,20 @@ text that matches Markdown note titles.
 
 ## Requirements
 
-- Sublime Text with the `LSP` package installed.
-- Node.js available to Sublime Text.
+- Sublime Text with Package Control installed.
+- The Sublime Text `LSP` package installed through Package Control.
+- Node.js available to run the installer and language server.
 - This repository checked out locally, or `tomboy-links-lsp` available on
   Sublime Text's `PATH`.
 
 ## Local Development
+
+From a clean Sublime Text install:
+
+1. Install Package Control if it is not already available.
+2. Run `Package Control: Install Package` from the Command Palette.
+3. Install `LSP`.
+4. Restart Sublime Text.
 
 From this repository, run:
 
@@ -35,12 +43,13 @@ Then restart Sublime Text and open a folder containing Markdown notes.
 
 ## Manual Setup
 
-1. Install the `LSP` package in Sublime Text.
-2. Open `Preferences > Package Settings > LSP > Settings`.
-3. Add the `tomboy-links` client from `LSP.sublime-settings`.
-4. Replace `/absolute/path/to/tomboy-links/lsp/server.js` with the absolute path
+1. Install Package Control if it is not already available.
+2. Install the `LSP` package through Package Control.
+3. Open `Preferences > Package Settings > LSP > Settings`.
+4. Add the `tomboy-links` client from `LSP.sublime-settings`.
+5. Replace `/absolute/path/to/tomboy-links/lsp/server.js` with the absolute path
    to this repository's `lsp/server.js`.
-5. Open a folder containing Markdown notes as a Sublime project or window.
+6. Open a folder containing Markdown notes as a Sublime project or window.
 
 If you have linked the package so `tomboy-links-lsp` is on the `PATH` seen by
 Sublime Text, you can use this command instead:
