@@ -1,7 +1,7 @@
 {
   "name": "tomboy-links",
   "displayName": "Tomboy Links",
-  "description": "Make plain text that matches Markdown note titles clickable inside VS Code.",
+  "description": "Make plain text that matches Markdown note titles clickable in supported editors.",
   "version": "0.0.1",
   "publisher": "local",
   "license": "MIT",
@@ -21,6 +21,9 @@
     "workspaceContains:**/*.md"
   ],
   "main": "./src/extension.js",
+  "bin": {
+    "tomboy-links-lsp": "./lsp/server.js"
+  },
   "contributes": {
     "configuration": {
       "title": "Implicit Markdown Links",
@@ -88,7 +91,7 @@
     ]
   },
   "scripts": {
-    "test": "node test/titleIndex.test.js"
+    "test": "node test/titleIndex.test.js && node test/lspCore.test.js"
   },
   "devDependencies": {}
 }

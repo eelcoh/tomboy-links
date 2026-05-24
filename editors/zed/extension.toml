@@ -1,0 +1,14 @@
+id = "tomboy-links"
+name = "Tomboy Links"
+version = "0.0.1"
+schema_version = 1
+authors = ["Eelco"]
+description = "Navigate Markdown note titles from plain text."
+repository = "https://github.com/eelcoh/tomboy-links"
+
+[language_servers.tomboy-links]
+name = "Tomboy Links LSP"
+languages = ["Markdown"]
+
+[language_servers.tomboy-links.language_ids]
+"Markdown" = "markdown"
